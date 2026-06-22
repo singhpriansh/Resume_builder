@@ -20,6 +20,12 @@ export async function exportToPdf(element: HTMLElement, filename: string): Promi
     })
 
     const imgData = canvas.toDataURL('image/jpeg', 0.98)
+
+    const link = document.createElement('a');
+    link.href = imgData;
+    link.download = filename.split(".")[0]+ ".png"; // Sets the default download filename
+    link.click();
+
     const pdf = new jsPDF({ unit: 'in', format: 'letter', orientation: 'portrait' })
 
     const pageWidth = 8.5
