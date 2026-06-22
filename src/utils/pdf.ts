@@ -3,13 +3,15 @@ import { jsPDF } from 'jspdf'
 
 export async function exportToPdf(element: HTMLElement, filename: string): Promise<void> {
   const clone = element.cloneNode(true) as HTMLElement
+  console.log("clone", clone)
   const container = document.createElement('div')
   container.style.cssText = 'position:fixed;left:-9999px;top:0;z-index:-1;background:#fff;'
   container.appendChild(clone)
+  console.log("child", container)
   document.body.appendChild(container)
 
   try {
-    const canvas : HTMLCanvasElement = await html2canvas(element, {
+    const canvas : HTMLCanvasElement = await html2canvas(clone, {
       scale: 2,
       useCORS: true,
       logging: false,
