@@ -9,7 +9,7 @@ export async function exportToPdf(element: HTMLElement, filename: string): Promi
   document.body.appendChild(container)
 
   try {
-    const canvas = await html2canvas(clone, {
+    const canvas : HTMLCanvasElement = await html2canvas(element, {
       scale: 2,
       useCORS: true,
       logging: false,
@@ -23,7 +23,7 @@ export async function exportToPdf(element: HTMLElement, filename: string): Promi
 
     const link = document.createElement('a');
     link.href = imgData;
-    link.download = filename.split(".")[0]+ ".png"; // Sets the default download filename
+    link.download = filename.split(".")[0]+ ".png";
     link.click();
 
     const pdf = new jsPDF({ unit: 'in', format: 'letter', orientation: 'portrait' })
