@@ -3,7 +3,8 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  build: { 
+  build: {
+    chunkSizeWarningLimit: 2000, 
     outDir: 'build',
     rollupOptions: {
       output: {
