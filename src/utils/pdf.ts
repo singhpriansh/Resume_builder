@@ -10,7 +10,7 @@ export async function exportToPdf(element: HTMLElement, filename: string): Promi
 
   try {
     const canvas = await html2canvas(clone, {
-      scale: 3,
+      scale: 2,
       useCORS: true,
       logging: false,
       backgroundColor: '#ffffff',
@@ -19,14 +19,13 @@ export async function exportToPdf(element: HTMLElement, filename: string): Promi
       },
     })
 
-    const imgData = canvas.toDataURL('image/jpeg', 1)
-    const pdf = new jsPDF('p', 'in', 'letter')
+    const imgData = canvas.toDataURL('image/jpeg', 0.98)
+    const pdf = new jsPDF({ unit: 'in', format: 'letter', orientation: 'portrait' })
 
-    const pageWidth = 8.5
-    const pageHeight = 11
+    const pageWidth = 8.4
+    const pageHeight = 10.5
     const imgWidth = pageWidth
-    const imgHeight = pageHeight
-    // const imgHeight = (canvas.height * imgWidth) / canvas.width
+    const imgHeight = (canvas.height * imgWidth) / canvas.width
 
     let heightLeft = imgHeight
     let position = 0
