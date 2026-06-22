@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://trusted-analytics.com https://vercel.live https://*.vercel.live connect-src 'self' https://vercel-analytics.com;">
+    <meta http-equiv="Content-Security-Policy" content="
+      script-src 'self' https://trusted-analytics.com https://vercel-scripts.com;
+      connect-src 'self' https://vercel-analytics.com https://*.vercel-analytics.com;
+    ">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,4 +18,3 @@
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-connect-src: https://vercel.live https://*.pusher.com wss://*.pusher.com; img-src: https://vercel.com; script-src: https://vercel.live; style-src: https://vercel.com; font-src https://vercel.live; frame-src: https://vercel.live
