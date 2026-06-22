@@ -37,7 +37,7 @@ export function EducationForm({ data, onChange }: EducationFormProps) {
           <div key={edu.id} className="relative p-4 rounded-lg bg-slate-50 border border-slate-100 space-y-4">
             <div className="flex items-center justify-between">
               <span className="text-sm font-medium text-slate-500">Education {index + 1}</span>
-              <Button variant="ghost" onClick={() => remove(edu.id)} className="!p-1.5 text-red-500 hover:text-red-600 hover:bg-red-50">
+              <Button variant="ghost" onClick={() => remove(edu.id)} className="p-1.5 text-red-500 hover:text-red-600 hover:bg-red-50">
                 <Trash2 className="w-4 h-4" />
               </Button>
             </div>
