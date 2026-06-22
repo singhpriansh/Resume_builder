@@ -67,7 +67,7 @@ export const ResumePreview = forwardRef<HTMLDivElement, ResumePreviewProps>(
                     <h3 className="text-sm font-bold text-slate-900">{exp.position || 'Position'}</h3>
                     <span className="text-xs text-slate-500 whitespace-nowrap ml-4">
                       {exp.startDate}
-                      {exp.startDate && (exp.endDate || exp.current) ? ' – ' : ''}
+                      {exp.startDate && (exp.endDate || exp.current) ? ' - ' : ''}
                       {exp.current ? 'Present' : exp.endDate}
                     </span>
                   </div>
@@ -109,7 +109,7 @@ export const ResumePreview = forwardRef<HTMLDivElement, ResumePreviewProps>(
                     </h3>
                     <span className="text-xs text-slate-500 whitespace-nowrap ml-4">
                       {edu.startDate}
-                      {edu.startDate && edu.endDate ? ' – ' : ''}
+                      {edu.startDate && edu.endDate ? ' - ' : ''}
                       {edu.endDate}
                     </span>
                   </div>
