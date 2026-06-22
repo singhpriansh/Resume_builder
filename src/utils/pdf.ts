@@ -25,7 +25,8 @@ export async function exportToPdf(element: HTMLElement, filename: string): Promi
     const pageWidth = 8.5
     const pageHeight = 11
     const imgWidth = pageWidth
-    const imgHeight = (canvas.height * imgWidth) / canvas.width
+    const imgHeight = pageHeight
+    // const imgHeight = (canvas.height * imgWidth) / canvas.width
 
     let heightLeft = imgHeight
     let position = 0
