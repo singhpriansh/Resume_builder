@@ -31,5 +31,9 @@ export function useResume() {
     localStorage.removeItem(STORAGE_KEY)
   }, [])
 
-  return { data, updateData, resetData }
+  const pageLink = useCallback(() => {
+    window.open('https://digitalheroesco.com/', '_blank')
+  }, [])
+
+  return { data, updateData, resetData, pageLink }
 }

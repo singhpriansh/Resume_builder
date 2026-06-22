@@ -6,7 +6,7 @@ import { useResume } from './hooks/useResume'
 import { exportToPdf } from './utils/pdf'
 
 function App() {
-  const { data, updateData, resetData } = useResume()
+  const { data, updateData, resetData, pageLink } = useResume()
   const previewRef = useRef<HTMLDivElement>(null)
   const [isExporting, setIsExporting] = useState(false)
   const [exportError, setExportError] = useState<string | null>(null)
@@ -47,10 +47,14 @@ function App() {
       <main className="flex-1 max-w-[1600px] mx-auto w-full px-6 py-6">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
           <div className="xl:max-h-[calc(100vh-88px)] xl:overflow-y-auto xl:pr-2 scrollbar-thin">
-            <FormPanel data={data} onChange={updateData} />
+          <div className="flex justify-center text-center py-4">
+            <button type="button" className="text-white px-4 py-2 bg-linear-to-br 
+            from-green-400 to-violet-800 hover:bg-linear-to-bl focus:ring-4 rounded-lg"
+              onClick={pageLink}>Built for Digital Heroes</button>
           </div>
-
-          <div className="xl:sticky xl:top-[88px] xl:self-start">
+          <FormPanel data={data} onChange={updateData} />
+          </div>
+          <div className="xl:sticky xl:top-[80px] xl:self-start">
             <div className="mb-3 flex items-center justify-between">
               <h2 className="text-sm font-semibold text-slate-500 uppercase tracking-wider">Live Preview</h2>
               <span className="text-xs text-slate-400">US Letter (8.5 × 11 in)</span>
