@@ -35,5 +35,13 @@ export function useResume() {
     window.open('https://digitalheroesco.com/', '_blank')
   }, [])
 
-  return { data, updateData, resetData, pageLink }
+  const singhpriansh = useCallback(() => {
+    window.open('https://www.linkedin.com/in/singhpriansh/', '_blank')
+  }, [])
+
+  const email = useCallback(() => {
+    window.location.href = "mailto:${singhpriansh.com@gmail.com}"
+  }, [])
+
+  return { data, updateData, resetData, pageLink, singhpriansh, email }
 }
