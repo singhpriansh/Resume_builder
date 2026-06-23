@@ -1,3 +1,4 @@
+import { domToPng } from 'modern-screenshot'
 import html2canvas from 'html2canvas-pro'
 import { jsPDF } from 'jspdf'
 
@@ -9,7 +10,7 @@ export async function exportToPdf(element: HTMLElement, filename: string): Promi
   document.body.appendChild(container)
 
   try {
-    const canvas = await html2canvas(clone, {
+    const canvas : HTMLCanvasElement = await html2canvas(clone, {
       scale: 2,
       useCORS: true,
       logging: false,
@@ -18,8 +19,13 @@ export async function exportToPdf(element: HTMLElement, filename: string): Promi
         clonedElement.style.boxShadow = 'none'
       },
     })
+    
+    const imgData : string = await domToPng(clone, {
+      scale: 2,
+      quality: 1,
+      type: "image/image",
+    })
 
-    const imgData = canvas.toDataURL('image/jpeg', 0.98)
     const pdf = new jsPDF({ unit: 'in', format: 'letter', orientation: 'portrait' })
 
     const pageWidth = 8.5
@@ -41,6 +47,8 @@ export async function exportToPdf(element: HTMLElement, filename: string): Promi
     }
 
     pdf.save(filename)
+  } catch (e) {
+    console.log("Skipping cross-origin stylesheet: ", e)
   } finally {
     document.body.removeChild(container)
   }

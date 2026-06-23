@@ -25,9 +25,9 @@ export const ResumePreview = forwardRef<HTMLDivElement, ResumePreviewProps>(
       <div
         ref={ref}
         className="bg-white text-slate-800 shadow-lg rounded-sm"
-        style={{ width: '8.5in', minHeight: '11in', padding: '0.6in 0.7in' }}
+        style={{ width: '8.5in', minHeight: '11in', padding: '0.5in 0.6in' }}
       >
-        <header className="border-b-2 border-slate-800 pb-4 mb-5">
+        <header className="border-b-2 border-slate-800 pb-2 mb-2">
           <h1 className="text-3xl font-bold tracking-tight text-slate-900 uppercase">
             {personalInfo.fullName || 'Your Name'}
           </h1>
@@ -60,7 +60,7 @@ export const ResumePreview = forwardRef<HTMLDivElement, ResumePreviewProps>(
             <h2 className="text-sm font-bold uppercase tracking-wider text-slate-800 border-b border-slate-300 pb-1 mb-3">
               Experience
             </h2>
-            <div className="space-y-4">
+            <div className="space-y-2">
               {experiences.map((exp) => (
                 <div key={exp.id}>
                   <div className="flex justify-between items-baseline">
@@ -77,7 +77,7 @@ export const ResumePreview = forwardRef<HTMLDivElement, ResumePreviewProps>(
                     {exp.location}
                   </p>
                   {exp.description && (
-                    <ul className="mt-1.5 space-y-0.5">
+                    <ul className="mt-1">
                       {formatDescription(exp.description).map((line, i) => (
                         <li
                           key={i}
@@ -99,7 +99,7 @@ export const ResumePreview = forwardRef<HTMLDivElement, ResumePreviewProps>(
             <h2 className="text-sm font-bold uppercase tracking-wider text-slate-800 border-b border-slate-300 pb-1 mb-3">
               Education
             </h2>
-            <div className="space-y-3">
+            <div className="space-y-2">
               {education.map((edu) => (
                 <div key={edu.id}>
                   <div className="flex justify-between items-baseline">
@@ -137,7 +137,7 @@ export const ResumePreview = forwardRef<HTMLDivElement, ResumePreviewProps>(
             <h2 className="text-sm font-bold uppercase tracking-wider text-slate-800 border-b border-slate-300 pb-1 mb-3">
               Projects
             </h2>
-            <div className="space-y-3">
+            <div className="space-y-2">
               {projects.map((project) => (
                 <div key={project.id}>
                   <div className="flex items-baseline gap-2">
