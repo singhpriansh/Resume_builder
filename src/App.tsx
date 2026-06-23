@@ -46,7 +46,7 @@ function App() {
 
       <main className="flex-1 max-w-[1600px] mx-auto w-full px-6 py-6">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
-          <div className="xl:max-h-[calc(100vh-88px)] xl:overflow-y-auto xl:pr-2 scrollbar-thin">
+          <div className="xl:max-h-[calc(100vh-100px)] xl:overflow-y-auto xl:pr-2 scrollbar-thin">
           <div className="flex justify-center text-center py-4">
             <button type="button" className="text-white px-4 py-2 bg-linear-to-br 
             from-green-400 to-violet-800 hover:bg-linear-to-bl focus:ring-4 rounded-lg"
