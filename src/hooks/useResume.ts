@@ -32,7 +32,7 @@ export function useResume() {
   }, [])
 
   const pageLink = useCallback(() => {
-    window.open('https://digitalheroesco.com/', '_blank')
+    window.open('https://digitalheroesco.com/', '_blank_')
   }, [])
 
   const singhpriansh = useCallback(() => {
