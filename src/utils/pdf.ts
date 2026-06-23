@@ -2,8 +2,8 @@ import { domToPng } from 'modern-screenshot'
 import html2canvas from 'html2canvas-pro'
 import { jsPDF } from 'jspdf'
 
-export async function exportToPdf(element, filename): Promise<void> {
-  const clone = element.cloneNode(true)
+export async function exportToPdf(element: HTMLElement, filename: string): Promise<void> {
+  const clone = element.cloneNode(true) as HTMLElement
   const container = document.createElement('div')
   container.style.cssText = 'position:fixed;left:-9999px;top:0;z-index:-1;background:#fff;'
   container.appendChild(clone)
@@ -37,7 +37,7 @@ export async function exportToPdf(element, filename): Promise<void> {
     let heightLeft = imgHeight
     let position = 0
 
-    pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight)
+    pdf.addImage(dataUrl, 'JPEG', 0, position, imgWidth, imgHeight)
     heightLeft -= pageHeight
 
     while (heightLeft > 0) {
