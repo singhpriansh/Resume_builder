@@ -20,12 +20,11 @@ export async function exportToPdf(element: HTMLElement, filename: string): Promi
       },
     })
     
-    const dataUrl : string = await domToPng(clone)
-    const imgData = canvas.toDataURL('image/jpeg', 0.98)
-    const link = document.createElement('a');
-    link.href = dataUrl;
-    link.download = filename.split(".")[0]+ ".png";
-    link.click();
+    const imgData : string = await domToPng(clone, {
+      scale: 2,
+      quality: 1,
+      type: "image/image",
+    })
 
     const pdf = new jsPDF({ unit: 'in', format: 'letter', orientation: 'portrait' })
 
@@ -37,7 +36,7 @@ export async function exportToPdf(element: HTMLElement, filename: string): Promi
     let heightLeft = imgHeight
     let position = 0
 
-    pdf.addImage(dataUrl, 'JPEG', 0, position, imgWidth, imgHeight)
+    pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight)
     heightLeft -= pageHeight
 
     while (heightLeft > 0) {
