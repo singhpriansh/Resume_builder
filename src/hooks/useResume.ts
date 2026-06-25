@@ -36,11 +36,11 @@ export function useResume() {
   }, [])
 
   const singhpriansh = useCallback(() => {
-    window.open('https://www.linkedin.com/in/singhpriansh/', '_blank')
+    window.open('https://www.linkedin.com/in/singhpriansh/', '_blank_')
   }, [])
 
   const email = useCallback(() => {
-    window.location.href = "mailto:${singhpriansh.com@gmail.com}"
+    window.location.href = "mailto:singhpriansh.com@gmail.com"
   }, [])
 
   return { data, updateData, resetData, pageLink, singhpriansh, email }
