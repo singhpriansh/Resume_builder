@@ -6,7 +6,7 @@ import { useResume } from './hooks/useResume'
 import { exportToPdf } from './utils/pdf'
 
 function App() {
-  const { data, updateData, resetData, pageLink, singhpriansh, email } = useResume()
+  const { data, updateData, resetData, singhpriansh, email } = useResume()
   const previewRef = useRef<HTMLDivElement>(null)
   const [isExporting, setIsExporting] = useState(false)
   const [exportError, setExportError] = useState<string | null>(null)
@@ -47,11 +47,11 @@ function App() {
       <main className="flex-1 max-w-[1600px] mx-auto w-full px-6 py-6">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
           <div className="xl:max-h-[calc(100vh-111px)] xl:overflow-y-auto xl:pr-2 scrollbar-thin">
-          <div className="flex justify-center text-center">
+          {/* <div className="flex justify-center text-center">
             <button type="button" className="text-white px-4 py-2 bg-linear-to-br 
             from-green-400 to-violet-800 hover:bg-linear-to-bl focus:ring-4 rounded-lg"
               onClick={pageLink}>Built for Digital Heroes</button>
-          </div>
+          </div> */}
           <div className="flex flex-col gap-1 bg-clip-padding text-center py-4">
             <div className="text-center justify-center flex flex-row">
               <div className="text p-2"> made by  .. </div>
